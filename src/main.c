@@ -204,6 +204,7 @@ static void print_pci_dev( void* dev ) {
   printf( "pcid.dma_alias_mask:\t%p\n", ( void* ) pcid.dma_alias_mask );
   printf( "pcid.dma_mask:\t%" PRIu64 "\n", pcid.dma_mask );
   printf( "pcid.driver:\t%p\n", pcid.driver );
-  printf( "pcid.driver_override:\t%s\n", pcid.driver_override );
+  if ( pcid.driver_override != NULL )
+    printf( "pcid.driver_override:\t%s\n", pcid.driver_override );
   printf( "pcid.irq:\t%" PRIu32 "\n", pcid.irq );
 }
