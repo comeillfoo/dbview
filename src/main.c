@@ -115,7 +115,7 @@ int main( int argc, char** argv ) {
     fprintf( stderr, "written %zu objects\n", check_count );
   }
 
-  fcntl( fd_ctrlargs, LOCK_UN, &lk_ctrlargs );
+  // fcntl( fd_ctrlargs, LOCK_UN, &lk_ctrlargs );
   fclose( ctrlargs );
   /* write args finish */
 
@@ -124,7 +124,7 @@ int main( int argc, char** argv ) {
   FILE* blob_source = fopen( srcblob_path, "rb" );
   if ( blob_source == NULL ) {
     fprintf( stderr, "cannot open blob source\n" );
-    fcntl( fd_ctrlargs, LOCK_UN, &lk_ctrlargs );
+    // fcntl( fd_ctrlargs, LOCK_UN, &lk_ctrlargs );
     fclose( ctrlargs );
     return -1; 
   }
